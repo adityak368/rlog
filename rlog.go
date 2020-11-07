@@ -593,7 +593,7 @@ func basicLog(logLevel int, traceLevel int, isLocked bool, format string, prefix
 	// Extract information about the caller of the log function, if requested.
 	var callingFuncName string
 	var moduleAndFileName string
-	pc, fullFilePath, line, ok := runtime.Caller(2)
+	pc, fullFilePath, line, ok := runtime.Caller(3)
 	if ok {
 		callingFuncName = runtime.FuncForPC(pc).Name()
 		// We only want to print or examine file and package name, so use the
